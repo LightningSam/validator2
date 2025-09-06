@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Certificate Validation Portal - Government of Jharkhand</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Government Header -->
+    <header class="gov-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="gov-brand">
+                    <div class="emblem">🏛️</div>
+                    <div class="brand-text">
+                        <h1>Government of Jharkhand</h1>
+                        <p>Department of Higher Education</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <select class="language-selector form-control">
+                        <option value="en">English</option>
+                        <option value="hi">हिंदी</option>
+                    </select>
+                    <button class="btn btn--outline btn--sm">Skip to Main Content</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>Academic Certificate Validation Portal</h2>
+            </div>
+            <div class="nav-menu">
+                <button class="nav-item active" data-section="home">Home</button>
+                <button class="nav-item" data-section="verify">Verify Certificate</button>
+                <button class="nav-item" data-section="institution">Institution Portal</button>
+                <button class="nav-item" data-section="student">Student Portal</button>
+                <button class="nav-item" data-section="admin">Admin Panel</button>
+                <button class="nav-item" data-section="help">Help & Support</button>
+            </div>
+            <button class="mobile-menu-toggle">☰</button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <span class="breadcrumb-item">Home</span>
+            <span class="breadcrumb-separator">></span>
+            <span class="breadcrumb-item active" id="current-section">Dashboard</span>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="container">
+                <!-- Hero Section -->
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1>Digital Academic Certificate Validation System</h1>
+                        <p class="hero-subtitle">Ensuring authenticity and preventing fraud in academic credentials through blockchain technology and AI-powered verification</p>
+                        <div class="hero-actions">
+                            <button class="btn btn--primary btn--lg" data-action="verify-now">Verify Certificate</button>
+                            <button class="btn btn--outline btn--lg" data-action="learn-more">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">45,678</div>
+                            <div class="stat-label">Certificates Verified</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">127</div>
+                            <div class="stat-label">Connected Institutions</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">98.7%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">89</div>
+                            <div class="stat-label">Fraud Cases Detected</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Access -->
+                <div class="quick-access">
+                    <h2>Quick Access</h2>
+                    <div class="access-grid">
+                        <div class="access-card" data-target="verify">
+                            <div class="access-icon">🔍</div>
+                            <h3>Verify Certificate</h3>
+                            <p>Upload and validate academic certificates instantly</p>
+                        </div>
+                        <div class="access-card" data-target="institution">
+                            <div class="access-icon">🏫</div>
+                            <h3>Institution Portal</h3>
+                            <p>Manage and upload certificates for your institution</p>
+                        </div>
+                        <div class="access-card" data-target="student">
+                            <div class="access-icon">🎓</div>
+                            <h3>Student Portal</h3>
+                            <p>Access and manage your academic credentials</p>
+                        </div>
+                        <div class="access-card" data-target="admin">
+                            <div class="access-icon">⚙️</div>
+                            <h3>Admin Panel</h3>
+                            <p>System administration and monitoring</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Dashboard -->
+                <div class="dashboard">
+                    <h2>System Overview</h2>
+                    <div class="dashboard-grid">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Verification Trends</h3>
+                                <div class="chart-container" style="position: relative; height: 300px;">
+                                    <canvas id="trendChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Institution Distribution</h3>
+                                <div class="chart-container" style="position: relative; height: 300px;">
+                                    <canvas id="institutionChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News & Updates -->
+                <div class="news-section">
+                    <h2>Latest Updates</h2>
+                    <div class="news-grid">
+                        <article class="news-card">
+                            <div class="news-date">September 5, 2025</div>
+                            <h3>New Blockchain Integration Launched</h3>
+                            <p>Enhanced security features now available for all certificate verification processes...</p>
+                        </article>
+                        <article class="news-card">
+                            <div class="news-date">September 1, 2025</div>
+                            <h3>50+ Universities Now Connected</h3>
+                            <p>Major milestone achieved with widespread adoption across Jharkhand institutions...</p>
+                        </article>
+                        <article class="news-card">
+                            <div class="news-date">August 28, 2025</div>
+                            <h3>AI-Powered Fraud Detection Update</h3>
+                            <p>New machine learning algorithms improve fraud detection accuracy by 15%...</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificate Verification Section -->
+        <section id="verify" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Certificate Verification Portal</h1>
+                    <p>Upload your academic certificate for instant blockchain-powered verification</p>
+                </div>
+
+                <div class="verification-flow">
+                    <div class="process-steps">
+                        <div class="step active" data-step="1">
+                            <div class="step-number">1</div>
+                            <div class="step-title">Upload Document</div>
+                        </div>
+                        <div class="step" data-step="2">
+                            <div class="step-number">2</div>
+                            <div class="step-title">OCR Processing</div>
+                        </div>
+                        <div class="step" data-step="3">
+                            <div class="step-number">3</div>
+                            <div class="step-title">Blockchain Verification</div>
+                        </div>
+                        <div class="step" data-step="4">
+                            <div class="step-number">4</div>
+                            <div class="step-title">Results</div>
+                        </div>
+                    </div>
+
+                    <div class="verification-content">
+                        <!-- Upload Step -->
+                        <div class="verify-step active" id="step-1">
+                            <div class="upload-area" id="uploadArea">
+                                <div class="upload-icon">📄</div>
+                                <h3>Drop your certificate here</h3>
+                                <p>Or click to browse files</p>
+                                <p class="upload-note">Supports PDF, JPG, PNG (Max 10MB)</p>
+                                <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png" style="display: none;">
+                            </div>
+                            <button class="btn btn--primary" id="proceedBtn" style="display: none;">Proceed with Verification</button>
+                        </div>
+
+                        <!-- OCR Processing Step -->
+                        <div class="verify-step" id="step-2">
+                            <div class="processing">
+                                <div class="spinner"></div>
+                                <h3>Processing Document...</h3>
+                                <p>Extracting text and analyzing certificate structure</p>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="ocrProgress"></div>
+                                </div>
+                            </div>
+                            <div class="extracted-data" id="extractedData" style="display: none;">
+                                <h3>Extracted Information</h3>
+                                <div class="data-grid" id="ocrResults"></div>
+                            </div>
+                        </div>
+
+                        <!-- Verification Step -->
+                        <div class="verify-step" id="step-3">
+                            <div class="verification-process">
+                                <h3>Blockchain Verification in Progress</h3>
+                                <div class="verification-checks">
+                                    <div class="check-item" id="check-database">
+                                        <div class="check-icon">⏳</div>
+                                        <span>Checking institutional database...</span>
+                                    </div>
+                                    <div class="check-item" id="check-blockchain">
+                                        <div class="check-icon">⏳</div>
+                                        <span>Verifying blockchain signature...</span>
+                                    </div>
+                                    <div class="check-item" id="check-fraud">
+                                        <div class="check-icon">⏳</div>
+                                        <span>Running fraud detection...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Results Step -->
+                        <div class="verify-step" id="step-4">
+                            <div class="results-container" id="verificationResults">
+                                <!-- Results will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Institution Portal Section -->
+        <section id="institution" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Institution Portal</h1>
+                    <p>Manage and upload certificates for your educational institution</p>
+                </div>
+
+                <div class="portal-tabs">
+                    <button class="tab-btn active" data-tab="overview">Overview</button>
+                    <button class="tab-btn" data-tab="upload">Bulk Upload</button>
+                    <button class="tab-btn" data-tab="manage">Manage Certificates</button>
+                    <button class="tab-btn" data-tab="analytics">Analytics</button>
+                </div>
+
+                <div class="tab-content">
+                    <div class="tab-panel active" id="overview">
+                        <div class="institution-stats">
+                            <div class="stat-card">
+                                <h3>Total Certificates</h3>
+                                <div class="stat-number">15,234</div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Verified This Month</h3>
+                                <div class="stat-number">1,456</div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>Pending Uploads</h3>
+                                <div class="stat-number">23</div>
+                            </div>
+                        </div>
+                        
+                        <div class="institution-info">
+                            <h3>Institution Details</h3>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>Institution Name:</label>
+                                    <span>Ranchi University</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Code:</label>
+                                    <span>RU001</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Location:</label>
+                                    <span>Ranchi, Jharkhand</span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Status:</label>
+                                    <span class="status status--success">Active</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="upload">
+                        <div class="upload-section">
+                            <h3>Bulk Certificate Upload</h3>
+                            <div class="upload-zone">
+                                <div class="upload-icon">📁</div>
+                                <h4>Upload CSV file with certificate data</h4>
+                                <p>Download template or drag & drop your CSV file here</p>
+                                <div class="upload-actions">
+                                    <button class="btn btn--outline">Download Template</button>
+                                    <button class="btn btn--primary">Choose File</button>
+                                </div>
+                            </div>
+                            
+                            <div class="upload-progress" style="display: none;">
+                                <h4>Upload Progress</h4>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%;"></div>
+                                </div>
+                                <p>Processing 650 of 1000 certificates...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="manage">
+                        <div class="manage-section">
+                            <div class="table-controls">
+                                <div class="search-box">
+                                    <input type="text" placeholder="Search certificates..." class="form-control">
+                                </div>
+                                <div class="filter-controls">
+                                    <select class="form-control">
+                                        <option>All Status</option>
+                                        <option>Verified</option>
+                                        <option>Pending</option>
+                                    </select>
+                                    <select class="form-control">
+                                        <option>All Years</option>
+                                        <option>2024</option>
+                                        <option>2023</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="certificates-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Certificate ID</th>
+                                            <th>Student Name</th>
+                                            <th>Degree</th>
+                                            <th>Year</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="certificatesTableBody">
+                                        <!-- Table content will be populated by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="analytics">
+                        <div class="analytics-section">
+                            <h3>Institution Analytics</h3>
+                            <div class="analytics-grid">
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h4>Monthly Verifications</h4>
+                                        <div class="chart-container" style="position: relative; height: 250px;">
+                                            <canvas id="monthlyChart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card__body">
+                                        <h4>Department Distribution</h4>
+                                        <div class="chart-container" style="position: relative; height: 250px;">
+                                            <canvas id="departmentChart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Portal Section -->
+        <section id="student" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Student Portal</h1>
+                    <p>Access and manage your academic credentials securely</p>
+                </div>
+
+                <div class="student-dashboard">
+                    <div class="student-info-card">
+                        <h3>Your Certificates</h3>
+                        <div class="certificate-list">
+                            <div class="certificate-item">
+                                <div class="certificate-details">
+                                    <h4>Bachelor of Computer Applications</h4>
+                                    <p>Ranchi University • 2024 • First Division</p>
+                                    <p class="cert-id">ID: JH/2024/BCA/001234</p>
+                                </div>
+                                <div class="certificate-actions">
+                                    <button class="btn btn--primary btn--sm">Generate QR</button>
+                                    <button class="btn btn--outline btn--sm">Download</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qr-section">
+                        <h3>QR Code Generator</h3>
+                        <div class="qr-container">
+                            <div class="qr-code">
+                                <div class="qr-placeholder">
+                                    <p>QR Code will appear here</p>
+                                </div>
+                            </div>
+                            <div class="qr-info">
+                                <p>Share this QR code with employers or institutions for instant verification</p>
+                                <button class="btn btn--primary">Generate New QR</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sharing-controls">
+                        <h3>Privacy & Sharing Settings</h3>
+                        <div class="control-list">
+                            <div class="control-item">
+                                <label>Allow public verification</label>
+                                <input type="checkbox" checked>
+                            </div>
+                            <div class="control-item">
+                                <label>Share grade information</label>
+                                <input type="checkbox" checked>
+                            </div>
+                            <div class="control-item">
+                                <label>Show verification history</label>
+                                <input type="checkbox">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Panel Section -->
+        <section id="admin" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Government Admin Panel</h1>
+                    <p>System administration and fraud monitoring dashboard</p>
+                </div>
+
+                <div class="admin-grid">
+                    <div class="admin-card">
+                        <h3>System Health</h3>
+                        <div class="health-indicators">
+                            <div class="indicator">
+                                <span class="status status--success">●</span>
+                                <span>Blockchain Network</span>
+                            </div>
+                            <div class="indicator">
+                                <span class="status status--success">●</span>
+                                <span>OCR Services</span>
+                            </div>
+                            <div class="indicator">
+                                <span class="status status--warning">●</span>
+                                <span>Database Sync</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3>Fraud Alerts</h3>
+                        <div class="alert-list" id="fraudAlerts">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3>Institution Management</h3>
+                        <div class="institution-list">
+                            <div class="institution-item">
+                                <span>Ranchi University</span>
+                                <span class="status status--success">Active</span>
+                            </div>
+                            <div class="institution-item">
+                                <span>NIT Jamshedpur</span>
+                                <span class="status status--warning">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-card full-width">
+                        <h3>State-wide Statistics</h3>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="stateChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Section -->
+        <section id="help" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Help & Support</h1>
+                    <p>Find answers to common questions and get technical support</p>
+                </div>
+
+                <div class="help-grid">
+                    <div class="help-card">
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="faq-list">
+                            <details class="faq-item">
+                                <summary>How do I verify a certificate?</summary>
+                                <p>Simply upload your certificate file in PDF, JPG, or PNG format. Our system will automatically extract information and verify it against institutional records and blockchain signatures.</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary>What file formats are supported?</summary>
+                                <p>We support PDF, JPG, JPEG, and PNG files up to 10MB in size. For best results, ensure your certificate is clearly visible and not blurred.</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary>How secure is the verification process?</summary>
+                                <p>All verifications are processed using blockchain technology and AI-powered fraud detection. Your documents are encrypted and not stored permanently on our servers.</p>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="help-card">
+                        <h3>Video Tutorials</h3>
+                        <div class="tutorial-list">
+                            <div class="tutorial-item">
+                                <div class="tutorial-thumb">🎥</div>
+                                <div>
+                                    <h4>How to Verify Certificates</h4>
+                                    <p>Step-by-step guide for certificate verification</p>
+                                </div>
+                            </div>
+                            <div class="tutorial-item">
+                                <div class="tutorial-thumb">🎥</div>
+                                <div>
+                                    <h4>Institution Setup Guide</h4>
+                                    <p>Setting up your institution on the platform</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="help-card">
+                        <h3>Contact Support</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <strong>Email:</strong>
+                                <a href="mailto:certificate.validation@jharkhand.gov.in">certificate.validation@jharkhand.gov.in</a>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Helpline:</strong>
+                                <a href="tel:1800-XXX-XXXX">1800-XXX-XXXX</a>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Office Hours:</strong>
+                                <span>Monday to Friday, 9:00 AM - 6:00 PM</span>
+                            </div>
+                        </div>
+                        <button class="btn btn--primary">Start Live Chat</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Government Footer -->
+    <footer class="gov-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About This Portal</h3>
+                    <p>Digital Jharkhand - Academic Integrity Initiative launched in 2025 to ensure the authenticity of academic credentials.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" target="_blank">Privacy Policy</a></li>
+                        <li><a href="#" target="_blank">Terms of Service</a></li>
+                        <li><a href="#" target="_blank">Accessibility</a></li>
+                        <li><a href="#" target="_blank">RTI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Department of Higher Education<br>Government of Jharkhand</p>
+                    <p>Email: certificate.validation@jharkhand.gov.in</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" target="_blank">Facebook</a>
+                        <a href="#" target="_blank">Twitter</a>
+                        <a href="#" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Government of Jharkhand. All rights reserved.</p>
+                <p>Last updated: September 6, 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
